@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAD74A021AFC096C008AB241 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A011AFC096C008AB241 /* Spotify.framework */; };
+		BAD74A041AFC2C92008AB241 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A031AFC2C92008AB241 /* AVFoundation.framework */; };
 		BADCB6FC1AEEAAF200F92A21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCB6FB1AEEAAF200F92A21 /* main.m */; };
 		BADCB6FF1AEEAAF200F92A21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCB6FE1AEEAAF200F92A21 /* AppDelegate.m */; };
 		BADCB7021AEEAAF200F92A21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCB7011AEEAAF200F92A21 /* ViewController.m */; };
@@ -14,7 +16,6 @@
 		BADCB7071AEEAAF200F92A21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADCB7061AEEAAF200F92A21 /* Images.xcassets */; };
 		BADCB70A1AEEAAF200F92A21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADCB7081AEEAAF200F92A21 /* LaunchScreen.xib */; };
 		BADCB7161AEEAAF200F92A21 /* TrialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCB7151AEEAAF200F92A21 /* TrialTests.m */; };
-		BADCB7211AEEB43000F92A21 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADCB7201AEEB43000F92A21 /* Spotify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BAD74A011AFC096C008AB241 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		BAD74A031AFC2C92008AB241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BADCB6F61AEEAAF200F92A21 /* Trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADCB6FA1AEEAAF200F92A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADCB6FB1AEEAAF200F92A21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		BADCB70F1AEEAAF200F92A21 /* TrialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADCB7141AEEAAF200F92A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADCB7151AEEAAF200F92A21 /* TrialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrialTests.m; sourceTree = "<group>"; };
-		BADCB7201AEEB43000F92A21 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BADCB7211AEEB43000F92A21 /* Spotify.framework in Frameworks */,
+				BAD74A041AFC2C92008AB241 /* AVFoundation.framework in Frameworks */,
+				BAD74A021AFC096C008AB241 /* Spotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +129,8 @@
 		BADCB71F1AEEB3C300F92A21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BADCB7201AEEB43000F92A21 /* Spotify.framework */,
+				BAD74A031AFC2C92008AB241 /* AVFoundation.framework */,
+				BAD74A011AFC096C008AB241 /* Spotify.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -365,6 +369,7 @@
 				);
 				INFOPLIST_FILE = Trial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -380,6 +385,7 @@
 				);
 				INFOPLIST_FILE = Trial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -437,6 +443,7 @@
 				BADCB71B1AEEAAF200F92A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BADCB71C1AEEAAF200F92A21 /* Build configuration list for PBXNativeTarget "TrialTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +452,7 @@
 				BADCB71E1AEEAAF200F92A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
