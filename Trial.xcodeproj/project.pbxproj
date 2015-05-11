@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		BAD74A021AFC096C008AB241 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A011AFC096C008AB241 /* Spotify.framework */; };
 		BAD74A041AFC2C92008AB241 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A031AFC2C92008AB241 /* AVFoundation.framework */; };
+		BAD74A071AFC7AB6008AB241 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD74A061AFC7AB6008AB241 /* LoginController.m */; };
+		BAD74A0A1AFC7C2A008AB241 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A091AFC7C2A008AB241 /* CoreData.framework */; };
+		BAD74A0C1AFC7C7E008AB241 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A0B1AFC7C7E008AB241 /* libsqlite3.dylib */; };
+		BAD74A0E1AFC7C94008AB241 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A0D1AFC7C94008AB241 /* Security.framework */; };
+		BAD74A101AFC7CB5008AB241 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A0F1AFC7CB5008AB241 /* Foundation.framework */; };
+		BAD74A121AFC7CC3008AB241 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A111AFC7CC3008AB241 /* CoreGraphics.framework */; };
+		BAD74A141AFC7CD5008AB241 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A131AFC7CD5008AB241 /* UIKit.framework */; };
+		BAD74A251AFC9DDC008AB241 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A181AFC9DDC008AB241 /* Back.png */; };
+		BAD74A261AFC9DDC008AB241 /* Forward.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A191AFC9DDC008AB241 /* Forward.png */; };
+		BAD74A271AFC9DDC008AB241 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A1A1AFC9DDC008AB241 /* Pause.png */; };
+		BAD74A281AFC9DDC008AB241 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A1B1AFC9DDC008AB241 /* Play.png */; };
+		BAD74A291AFC9DDC008AB241 /* Beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A1D1AFC9DDC008AB241 /* Beer.jpg */; };
+		BAD74A2A1AFC9DDC008AB241 /* Fam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A1E1AFC9DDC008AB241 /* Fam.jpg */; };
+		BAD74A2B1AFC9DDC008AB241 /* FieldHockey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A1F1AFC9DDC008AB241 /* FieldHockey.jpg */; };
+		BAD74A2C1AFC9DDC008AB241 /* Lobster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A201AFC9DDC008AB241 /* Lobster.jpg */; };
+		BAD74A2D1AFC9DDC008AB241 /* Masks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A211AFC9DDC008AB241 /* Masks.jpg */; };
+		BAD74A2E1AFC9DDC008AB241 /* Nam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A221AFC9DDC008AB241 /* Nam.jpg */; };
+		BAD74A2F1AFC9DDC008AB241 /* Tiger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A231AFC9DDC008AB241 /* Tiger.jpg */; };
+		BAD74A301AFC9DDC008AB241 /* Viking.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAD74A241AFC9DDC008AB241 /* Viking.jpg */; };
 		BADCB6FC1AEEAAF200F92A21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCB6FB1AEEAAF200F92A21 /* main.m */; };
 		BADCB6FF1AEEAAF200F92A21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCB6FE1AEEAAF200F92A21 /* AppDelegate.m */; };
 		BADCB7021AEEAAF200F92A21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCB7011AEEAAF200F92A21 /* ViewController.m */; };
@@ -31,6 +50,28 @@
 /* Begin PBXFileReference section */
 		BAD74A011AFC096C008AB241 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		BAD74A031AFC2C92008AB241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BAD74A051AFC6D82008AB241 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		BAD74A061AFC7AB6008AB241 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		BAD74A081AFC7B7F008AB241 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		BAD74A091AFC7C2A008AB241 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BAD74A0B1AFC7C7E008AB241 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		BAD74A0D1AFC7C94008AB241 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BAD74A0F1AFC7CB5008AB241 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BAD74A111AFC7CC3008AB241 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BAD74A131AFC7CD5008AB241 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BAD74A151AFC8209008AB241 /* Trial-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Trial-Prefix.pch"; sourceTree = "<group>"; };
+		BAD74A181AFC9DDC008AB241 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
+		BAD74A191AFC9DDC008AB241 /* Forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Forward.png; sourceTree = "<group>"; };
+		BAD74A1A1AFC9DDC008AB241 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
+		BAD74A1B1AFC9DDC008AB241 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		BAD74A1D1AFC9DDC008AB241 /* Beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beer.jpg; sourceTree = "<group>"; };
+		BAD74A1E1AFC9DDC008AB241 /* Fam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Fam.jpg; sourceTree = "<group>"; };
+		BAD74A1F1AFC9DDC008AB241 /* FieldHockey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FieldHockey.jpg; sourceTree = "<group>"; };
+		BAD74A201AFC9DDC008AB241 /* Lobster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lobster.jpg; sourceTree = "<group>"; };
+		BAD74A211AFC9DDC008AB241 /* Masks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Masks.jpg; sourceTree = "<group>"; };
+		BAD74A221AFC9DDC008AB241 /* Nam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nam.jpg; sourceTree = "<group>"; };
+		BAD74A231AFC9DDC008AB241 /* Tiger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tiger.jpg; sourceTree = "<group>"; };
+		BAD74A241AFC9DDC008AB241 /* Viking.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Viking.jpg; sourceTree = "<group>"; };
 		BADCB6F61AEEAAF200F92A21 /* Trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADCB6FA1AEEAAF200F92A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADCB6FB1AEEAAF200F92A21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,8 +92,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAD74A041AFC2C92008AB241 /* AVFoundation.framework in Frameworks */,
+				BAD74A0A1AFC7C2A008AB241 /* CoreData.framework in Frameworks */,
+				BAD74A0C1AFC7C7E008AB241 /* libsqlite3.dylib in Frameworks */,
 				BAD74A021AFC096C008AB241 /* Spotify.framework in Frameworks */,
+				BAD74A041AFC2C92008AB241 /* AVFoundation.framework in Frameworks */,
+				BAD74A0E1AFC7C94008AB241 /* Security.framework in Frameworks */,
+				BAD74A101AFC7CB5008AB241 /* Foundation.framework in Frameworks */,
+				BAD74A121AFC7CC3008AB241 /* CoreGraphics.framework in Frameworks */,
+				BAD74A141AFC7CD5008AB241 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +113,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BAD74A161AFC9DDC008AB241 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BAD74A171AFC9DDC008AB241 /* Icons */,
+				BAD74A1C1AFC9DDC008AB241 /* SlidePhotos */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BAD74A171AFC9DDC008AB241 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				BAD74A181AFC9DDC008AB241 /* Back.png */,
+				BAD74A191AFC9DDC008AB241 /* Forward.png */,
+				BAD74A1A1AFC9DDC008AB241 /* Pause.png */,
+				BAD74A1B1AFC9DDC008AB241 /* Play.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		BAD74A1C1AFC9DDC008AB241 /* SlidePhotos */ = {
+			isa = PBXGroup;
+			children = (
+				BAD74A1D1AFC9DDC008AB241 /* Beer.jpg */,
+				BAD74A1E1AFC9DDC008AB241 /* Fam.jpg */,
+				BAD74A1F1AFC9DDC008AB241 /* FieldHockey.jpg */,
+				BAD74A201AFC9DDC008AB241 /* Lobster.jpg */,
+				BAD74A211AFC9DDC008AB241 /* Masks.jpg */,
+				BAD74A221AFC9DDC008AB241 /* Nam.jpg */,
+				BAD74A231AFC9DDC008AB241 /* Tiger.jpg */,
+				BAD74A241AFC9DDC008AB241 /* Viking.jpg */,
+			);
+			path = SlidePhotos;
+			sourceTree = "<group>";
+		};
 		BADCB6ED1AEEAAF200F92A21 = {
 			isa = PBXGroup;
 			children = (
@@ -88,11 +170,14 @@
 		BADCB6F81AEEAAF200F92A21 /* Trial */ = {
 			isa = PBXGroup;
 			children = (
+				BAD74A051AFC6D82008AB241 /* Config.h */,
 				BADCB6FD1AEEAAF200F92A21 /* AppDelegate.h */,
 				BADCB6FE1AEEAAF200F92A21 /* AppDelegate.m */,
+				BADCB7031AEEAAF200F92A21 /* Main.storyboard */,
 				BADCB7001AEEAAF200F92A21 /* ViewController.h */,
 				BADCB7011AEEAAF200F92A21 /* ViewController.m */,
-				BADCB7031AEEAAF200F92A21 /* Main.storyboard */,
+				BAD74A081AFC7B7F008AB241 /* LoginController.h */,
+				BAD74A061AFC7AB6008AB241 /* LoginController.m */,
 				BADCB7061AEEAAF200F92A21 /* Images.xcassets */,
 				BADCB7081AEEAAF200F92A21 /* LaunchScreen.xib */,
 				BADCB6F91AEEAAF200F92A21 /* Supporting Files */,
@@ -103,8 +188,10 @@
 		BADCB6F91AEEAAF200F92A21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BAD74A161AFC9DDC008AB241 /* Images */,
 				BADCB6FA1AEEAAF200F92A21 /* Info.plist */,
 				BADCB6FB1AEEAAF200F92A21 /* main.m */,
+				BAD74A151AFC8209008AB241 /* Trial-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -129,6 +216,12 @@
 		BADCB71F1AEEB3C300F92A21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAD74A131AFC7CD5008AB241 /* UIKit.framework */,
+				BAD74A111AFC7CC3008AB241 /* CoreGraphics.framework */,
+				BAD74A0F1AFC7CB5008AB241 /* Foundation.framework */,
+				BAD74A0D1AFC7C94008AB241 /* Security.framework */,
+				BAD74A0B1AFC7C7E008AB241 /* libsqlite3.dylib */,
+				BAD74A091AFC7C2A008AB241 /* CoreData.framework */,
 				BAD74A031AFC2C92008AB241 /* AVFoundation.framework */,
 				BAD74A011AFC096C008AB241 /* Spotify.framework */,
 			);
@@ -216,9 +309,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD74A271AFC9DDC008AB241 /* Pause.png in Resources */,
+				BAD74A251AFC9DDC008AB241 /* Back.png in Resources */,
 				BADCB7051AEEAAF200F92A21 /* Main.storyboard in Resources */,
+				BAD74A2C1AFC9DDC008AB241 /* Lobster.jpg in Resources */,
+				BAD74A2A1AFC9DDC008AB241 /* Fam.jpg in Resources */,
 				BADCB70A1AEEAAF200F92A21 /* LaunchScreen.xib in Resources */,
+				BAD74A281AFC9DDC008AB241 /* Play.png in Resources */,
+				BAD74A2D1AFC9DDC008AB241 /* Masks.jpg in Resources */,
+				BAD74A291AFC9DDC008AB241 /* Beer.jpg in Resources */,
 				BADCB7071AEEAAF200F92A21 /* Images.xcassets in Resources */,
+				BAD74A261AFC9DDC008AB241 /* Forward.png in Resources */,
+				BAD74A301AFC9DDC008AB241 /* Viking.jpg in Resources */,
+				BAD74A2E1AFC9DDC008AB241 /* Nam.jpg in Resources */,
+				BAD74A2B1AFC9DDC008AB241 /* FieldHockey.jpg in Resources */,
+				BAD74A2F1AFC9DDC008AB241 /* Tiger.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADCB7021AEEAAF200F92A21 /* ViewController.m in Sources */,
+				BAD74A071AFC7AB6008AB241 /* LoginController.m in Sources */,
 				BADCB6FF1AEEAAF200F92A21 /* AppDelegate.m in Sources */,
 				BADCB6FC1AEEAAF200F92A21 /* main.m in Sources */,
 			);
@@ -368,6 +474,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Trial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,6 +491,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Trial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -9,10 +9,7 @@
 #import <Spotify/Spotify.h>
 #import "Config.h"
 #import "ViewController.h"
-// Constants
-static NSString * const kClientId = @"58bb7b43ed924142b073d0b350fb4fd5";
-static NSString * const kCallbackURL = @"trial://callback";
-static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
+
 
 
 @interface AppDelegate ()
