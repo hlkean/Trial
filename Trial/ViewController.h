@@ -12,15 +12,22 @@
 @interface ViewController : UIViewController<SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
 
 
-@property (strong, nonatomic) IBOutlet UIImageView *Pic;
+//@property (strong, nonatomic) IBOutlet UIImageView *Pic;
+//
+//- (IBAction)swipePic:(UIGestureRecognizer *)sender;
 
-- (IBAction)swipePic:(UIGestureRecognizer *)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *Eyes;
 
 
-@property (strong, nonatomic) IBOutlet UIView *EyeArea;
-- (IBAction)TouchMeh:(UIGestureRecognizer *)sender;
 
 @property (strong, nonatomic) IBOutlet UIView *EarArea;
+
+
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
+
+- (IBAction)touchMeh:(UIGestureRecognizer *)sender;
+
 
 @end
 

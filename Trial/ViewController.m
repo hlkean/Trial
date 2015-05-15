@@ -20,54 +20,72 @@
 
 @property (nonatomic, strong) SPTAudioStreamingController *player;
 
+
+//image slide effect
+@property (nonatomic, strong) NSArray *pageImageNames;
+@property (nonatomic, strong) NSMutableArray *pageViews;
+
+- (void)loadVisiblePages;
+- (void)loadPage:(NSInteger)page;
+- (void)purgePage:(NSInteger)page;
+
+
 @end
 
 
 @implementation ViewController
 
-   NSInteger imageIndex = 7;
-- (IBAction)swipePic:(UIGestureRecognizer *)sender {
- 
-    NSArray *images=[[NSArray alloc] initWithObjects:
-                     @"Lobster.jpg",
-                     @"Beer.jpg",
-                     @"Nam.jpg",
-                     @"Viking.jpg",
-                     @"Tiger.jpg",
-                     @"Masks.jpg",
-                     @"FieldHockey.jpg",
-                     @"Fam.jpg",nil];
-    
-    UISwipeGestureRecognizerDirection direction =
-    [(UISwipeGestureRecognizer *) sender direction];
-    
-    switch (direction) {
-        case UISwipeGestureRecognizerDirectionLeft: imageIndex++;
-            break;
-        case UISwipeGestureRecognizerDirectionRight: imageIndex--;
-            break;
-        default:
-            break;
-    }
-    imageIndex = (imageIndex < 0) ? ([images count] -1):
-    imageIndex % [images count];
-    _Pic.image = [UIImage imageNamed:[images objectAtIndex:imageIndex]];
 
-    
-}
+@synthesize scrollView = _scrollView;
 
 
+@synthesize pageImageNames = _pageImages;
+@synthesize pageViews = _pageViews;
 
 
-- (IBAction)TouchMeh:(UIGestureRecognizer *)sender {
+//   NSInteger imageIndex = 7;
+//- (IBAction)swipePic:(UIGestureRecognizer *)sender {
+// 
+//    NSArray *images=[[NSArray alloc] initWithObjects:
+//                     @"Lobster.jpg",
+//                     @"Beer.jpg",
+//                     @"Nam.jpg",
+//                     @"Viking.jpg",
+//                     @"Tiger.jpg",
+//                     @"Masks.jpg",
+//                     @"FieldHockey.jpg",
+//                     @"Fam.jpg",nil];
+//    
+//    UISwipeGestureRecognizerDirection direction =
+//    [(UISwipeGestureRecognizer *) sender direction];
+//    
+//    switch (direction) {
+//        case UISwipeGestureRecognizerDirectionLeft: imageIndex++;
+//            break;
+//        case UISwipeGestureRecognizerDirectionRight: imageIndex--;
+//            break;
+//        default:
+//            break;
+//    }
+//    imageIndex = (imageIndex < 0) ? ([images count] -1):
+//    imageIndex % [images count];
+//    _Pic.image = [UIImage imageNamed:[images objectAtIndex:imageIndex]];
+//
+//    
+//}
+//
+
+
+
+- (IBAction)touchMeh:(UIGestureRecognizer *)sender {
+
 
     if ([_EarArea isHidden]) {
         [_EarArea setHidden:NO];
-        [_Pic setFrame:CGRectMake(0, 0, self.view.frame.size.width, 914)];
+       
     } else {
         [_EarArea setHidden:YES];
-        [_Pic setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    }
+           }
     
     
     
@@ -79,11 +97,78 @@
 
     
 
+- (void)loadPage:(NSInteger)page {
+    if (page < 0 || page >= self.pageImageNames.count) {
+        // If it's outside the range of what you have to display, then do nothing
+        return;
+    }
+    
+    // 1
+    UIView *pageView = [self.pageViews objectAtIndex:page];
+    if ((NSNull*)pageView == [NSNull null]) {
+        // 2
+        CGRect frame = self.scrollView.bounds;
+        frame.origin.x = frame.size.width * page;
+        frame.origin.y = 0.0f;
+        
+        // 3
+        NSString* imageName = [self.pageImageNames objectAtIndex:page];
+        NSString* imagePath = [ [ NSBundle mainBundle] pathForResource:imageName ofType:@"jpg"];
+        UIImageView *newPageView = [ [UIImageView alloc] initWithImage: [UIImage imageWithContentsOfFile:imagePath]];
+
+        newPageView.contentMode = UIViewContentModeScaleAspectFit;
+        newPageView.frame = frame;
+        [self.scrollView addSubview:newPageView];
+        // 4
+        [self.pageViews replaceObjectAtIndex:page withObject:newPageView];
+    }
+}
 
 
 
-
-
+- (void)purgePage:(NSInteger)page {
+    if (page < 0 || page >= self.pageImageNames.count) {
+        // If it's outside the range of what you have to display, then do nothing
+        return;
+    }
+    
+    // Remove a page from the scroll view and reset the container array
+    UIView *pageView = [self.pageViews objectAtIndex:page];
+    if ((NSNull*)pageView != [NSNull null]) {
+        [pageView removeFromSuperview];
+        [self.pageViews replaceObjectAtIndex:page withObject:[NSNull null]];
+    }
+}
+- (void)loadVisiblePages {
+    // First, determine which page is currently visible
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    NSInteger page = (NSInteger)floor((self.scrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+    
+    
+    
+    // Work out which pages you want to load
+    NSInteger firstPage = page - 7;
+    NSInteger lastPage = page + 7;
+    
+    // Purge anything before the first page
+    for (NSInteger i=0; i<firstPage; i++) {
+        [self purgePage:i];
+    }
+    
+    // Load pages in our range
+    for (NSInteger i=firstPage; i<=lastPage; i++) {
+        [self loadPage:i];
+    }
+    
+    // Purge anything after the last page
+    for (NSInteger i=lastPage+1; i<self.pageImageNames.count; i++) {
+        [self purgePage:i];
+    }
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Load the pages that are now on screen
+    [self loadVisiblePages];
+}
 
 
 - (void)viewDidLoad {
@@ -91,8 +176,35 @@
     self.titleLabel.text = @"Nothing Playing";
     self.albumLabel.text = @"";
     self.artistLabel.text = @"";
+  
+    //ImageSlide
+    // 1
+    
+    
+    self.pageImageNames = [NSArray arrayWithObjects:
+                           @"Lobster",
+                           @"Beer",
+                           @"Nam",
+                          @"Viking",
+                            @"Tiger",
+                           @"Masks",
+                           @"FieldHockey",
+                          @"Fam",
+                       nil];
+    
+    NSInteger pageCount = self.pageImageNames.count;
+    
+    
+    // 3
+    self.pageViews = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < pageCount; ++i) {
+        [self.pageViews addObject:[NSNull null]];
+    }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+     }
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
@@ -186,7 +298,17 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self handleNewSession];
+    
+    // 4
+    CGSize pagesScrollViewSize = self.scrollView.frame.size;
+    self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImageNames.count, pagesScrollViewSize.height);
+    
+    // 5
+    [self loadVisiblePages];
+    
 }
+
+
 
 -(void)handleNewSession {
     SPTAuth *auth = [SPTAuth defaultInstance];
@@ -246,6 +368,7 @@
 - (void)audioStreaming:(SPTAudioStreamingController *)audioStreaming didChangePlaybackStatus:(BOOL)isPlaying {
     NSLog(@"is playing = %d", isPlaying);
 }
+
 
 
 

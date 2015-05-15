@@ -79,11 +79,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJo-ia-QP2">
+                                <rect key="frame" x="0.0" y="70" width="768" height="954"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mwy-AM-wAb" appends="YES" id="zmf-uc-pka"/>
+                                </connections>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhO-LX-Z35">
-                                <rect key="frame" x="0.0" y="914" width="768" height="110"/>
+                                <rect key="frame" x="0.0" y="910" width="768" height="114"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8T-nQ-xrf" userLabel="Back">
-                                        <rect key="frame" x="274" y="8" width="78" height="90"/>
+                                        <rect key="frame" x="274" y="12" width="78" height="90"/>
                                         <state key="normal" image="Back">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -92,7 +99,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-J0-yeW" userLabel="Next">
-                                        <rect key="frame" x="624" y="8" width="78" height="90"/>
+                                        <rect key="frame" x="624" y="12" width="78" height="90"/>
                                         <state key="normal" image="Forward">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -101,7 +108,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkj-Eh-tNF" userLabel="Play">
-                                        <rect key="frame" x="454" y="8" width="78" height="90"/>
+                                        <rect key="frame" x="454" y="12" width="78" height="90"/>
                                         <state key="normal" image="Play">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -110,7 +117,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAL-pw-IeM">
-                                        <rect key="frame" x="54" y="35" width="110" height="36"/>
+                                        <rect key="frame" x="54" y="35" width="110" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="dNG-ge-Qiz"/>
                                         </constraints>
@@ -137,46 +144,25 @@
                                     <constraint firstItem="R8T-nQ-xrf" firstAttribute="leading" secondItem="bhO-LX-Z35" secondAttribute="leading" constant="274" id="sew-Nd-amg"/>
                                 </constraints>
                             </view>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fam.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5IS-xj-bQ6">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="914"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="914" id="4QH-ww-Ha3"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="eMa-Wc-89h" appends="YES" id="Y6M-r5-Wto"/>
-                                    <outletCollection property="gestureRecognizers" destination="Hiz-LR-i3z" appends="YES" id="Xcb-qd-xv0"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="bhO-LX-Z35" firstAttribute="leading" secondItem="HlN-ll-MpR" secondAttribute="leading" id="5Wr-fI-qQz"/>
-                            <constraint firstAttribute="trailing" secondItem="bhO-LX-Z35" secondAttribute="trailing" id="7Wx-Zc-5E2"/>
-                            <constraint firstItem="bhO-LX-Z35" firstAttribute="bottom" secondItem="JDu-kY-70g" secondAttribute="top" id="Ksw-x2-cjJ"/>
-                            <constraint firstItem="5IS-xj-bQ6" firstAttribute="trailing" secondItem="bhO-LX-Z35" secondAttribute="trailing" id="goa-G6-laZ"/>
-                            <constraint firstItem="bhO-LX-Z35" firstAttribute="top" secondItem="5IS-xj-bQ6" secondAttribute="bottom" id="hGp-ef-gEd"/>
-                            <constraint firstItem="5IS-xj-bQ6" firstAttribute="top" secondItem="HlN-ll-MpR" secondAttribute="top" id="hYQ-2i-i6x"/>
-                            <constraint firstItem="5IS-xj-bQ6" firstAttribute="leading" secondItem="bhO-LX-Z35" secondAttribute="leading" id="pCn-eK-0Rq"/>
+                            <constraint firstItem="FJo-ia-QP2" firstAttribute="leading" secondItem="bhO-LX-Z35" secondAttribute="leading" id="2pT-er-jpJ"/>
+                            <constraint firstItem="FJo-ia-QP2" firstAttribute="leading" secondItem="HlN-ll-MpR" secondAttribute="leading" id="4Y1-eK-oC4"/>
+                            <constraint firstItem="FJo-ia-QP2" firstAttribute="trailing" secondItem="bhO-LX-Z35" secondAttribute="trailing" id="IMS-pm-cAQ"/>
+                            <constraint firstItem="bhO-LX-Z35" firstAttribute="top" secondItem="FJo-ia-QP2" secondAttribute="bottom" constant="-114" id="M0p-KA-uel"/>
+                            <constraint firstAttribute="trailing" secondItem="FJo-ia-QP2" secondAttribute="trailing" id="fOh-5g-HxU"/>
+                            <constraint firstItem="FJo-ia-QP2" firstAttribute="top" secondItem="lFr-L3-H7r" secondAttribute="bottom" constant="50" id="icN-UW-p5I"/>
+                            <constraint firstItem="FJo-ia-QP2" firstAttribute="bottom" secondItem="JDu-kY-70g" secondAttribute="top" id="jeb-02-0fB"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="ZN1-MJ-K6C" appends="YES" id="UMv-jC-YWY"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Qhg-iP-NNF"/>
                     <connections>
                         <outlet property="EarArea" destination="bhO-LX-Z35" id="ErX-hH-rI8"/>
-                        <outlet property="EyeArea" destination="HlN-ll-MpR" id="pwb-c3-8dt"/>
-                        <outlet property="pic" destination="5IS-xj-bQ6" id="1J6-1m-Nfk"/>
-                        <outlet property="view" destination="5IS-xj-bQ6" id="ei8-tY-NLb"/>
+                        <outlet property="scrollView" destination="FJo-ia-QP2" id="KIo-SQ-r7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAc-Ss-gPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ZN1-MJ-K6C">
-                    <connections>
-                        <action selector="TouchMeh:" destination="ABQ-00-g8n" id="dvN-kU-mkW"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="Hiz-LR-i3z">
                     <connections>
                         <action selector="swipePic:" destination="ABQ-00-g8n" id="egW-34-fxe"/>
@@ -187,13 +173,17 @@
                         <action selector="swipePic:" destination="ABQ-00-g8n" id="Z1d-Mh-vPm"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="mwy-AM-wAb">
+                    <connections>
+                        <action selector="touchMeh:" destination="ABQ-00-g8n" id="ofc-wy-rN9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="667" y="365"/>
+            <point key="canvasLocation" x="1215" y="293"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back" width="78" height="90"/>
-        <image name="Fam.jpg" width="439" height="603"/>
         <image name="Forward" width="78" height="90"/>
         <image name="Play" width="78" height="90"/>
     </resources>
