@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4ED90900-FFBA-46E5-99A8-1E0F0402399B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Trial</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9B9C490B7A302EBF7967F9C59973E25C7BE5DC8C</key>
 		<string>https://github.com/hlkean/Trial.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Trial.xcodeproj/project.xcworkspace</string>
+	<string>Trial.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9B9C490B7A302EBF7967F9C59973E25C7BE5DC8C</key>
