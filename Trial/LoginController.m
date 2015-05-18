@@ -36,15 +36,18 @@
     if(self.navigationController.topViewController == self) {
         SPTAuth *auth = [SPTAuth defaultInstance];
         if (auth.session && [auth.session isValid]) {
-            [self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
+            [self performSegueWithIdentifier:@"ShowSplash" sender:nil];
+            //[self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
         }
     }
 }
 
--(void)showPlayer {
+//-(void)showPlayer {
+-(void)showSplash {
     self.firstLoad = NO;
     self.statusLabel.text = @"Logged in.";
-    [self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
+    [self performSegueWithIdentifier:@"ShowSplash" sender:nil];
+    //[self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
 }
 
 - (void)authenticationViewController:(SPTAuthViewController *)viewcontroller didFailToLogin:(NSError *)error {
@@ -54,7 +57,8 @@
 
 - (void)authenticationViewController:(SPTAuthViewController *)viewcontroller didLoginWithSession:(SPTSession *)session {
     self.statusLabel.text = @"";
-    [self showPlayer];
+    //[self showPlayer];
+    [self showSplash];
 }
 
 - (void)authenticationViewControllerDidCancelLogin:(SPTAuthViewController *)authenticationViewController {
@@ -88,8 +92,8 @@
             NSLog(@"*** Error renewing session: %@", error);
             return;
         }
-        
-        [self showPlayer];
+        //[self showPlayer];
+        [self showSplash];
     }];
 }
 
@@ -105,7 +109,8 @@
     // Check if it's still valid
     if ([auth.session isValid] && self.firstLoad) {
         // It's still valid, show the player.
-        [self showPlayer];
+        //[self showPlayer];
+        [self showSplash];
         return;
     }
     

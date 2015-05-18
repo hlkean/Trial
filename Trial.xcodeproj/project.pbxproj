@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA70D1C91B063FDB0095E010 /* NPInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA70D1C81B063FDB0095E010 /* NPInfiniteScrollView.m */; };
+		BA70D1CC1B0647540095E010 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA70D1CB1B0647540095E010 /* SplashViewController.m */; };
 		BAD74A021AFC096C008AB241 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A011AFC096C008AB241 /* Spotify.framework */; };
 		BAD74A041AFC2C92008AB241 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A031AFC2C92008AB241 /* AVFoundation.framework */; };
 		BAD74A071AFC7AB6008AB241 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD74A061AFC7AB6008AB241 /* LoginController.m */; };
@@ -48,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA70D1C71B063FDB0095E010 /* NPInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPInfiniteScrollView.h; sourceTree = "<group>"; };
+		BA70D1C81B063FDB0095E010 /* NPInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPInfiniteScrollView.m; sourceTree = "<group>"; };
+		BA70D1CA1B0647540095E010 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		BA70D1CB1B0647540095E010 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		BAD74A011AFC096C008AB241 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		BAD74A031AFC2C92008AB241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BAD74A051AFC6D82008AB241 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -113,6 +119,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA70D1C61B063FDB0095E010 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				BA70D1C71B063FDB0095E010 /* NPInfiniteScrollView.h */,
+				BA70D1C81B063FDB0095E010 /* NPInfiniteScrollView.m */,
+			);
+			name = class;
+			path = "../../../Downloads/NPInfiniteScrollView-master/class";
+			sourceTree = "<group>";
+		};
 		BAD74A161AFC9DDC008AB241 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +190,11 @@
 				BADCB6FD1AEEAAF200F92A21 /* AppDelegate.h */,
 				BADCB6FE1AEEAAF200F92A21 /* AppDelegate.m */,
 				BADCB7031AEEAAF200F92A21 /* Main.storyboard */,
+				BA70D1CA1B0647540095E010 /* SplashViewController.h */,
+				BA70D1CB1B0647540095E010 /* SplashViewController.m */,
 				BADCB7001AEEAAF200F92A21 /* ViewController.h */,
 				BADCB7011AEEAAF200F92A21 /* ViewController.m */,
+				BA70D1C61B063FDB0095E010 /* class */,
 				BAD74A081AFC7B7F008AB241 /* LoginController.h */,
 				BAD74A061AFC7AB6008AB241 /* LoginController.m */,
 				BADCB7061AEEAAF200F92A21 /* Images.xcassets */,
@@ -341,10 +360,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA70D1C91B063FDB0095E010 /* NPInfiniteScrollView.m in Sources */,
 				BADCB7021AEEAAF200F92A21 /* ViewController.m in Sources */,
 				BAD74A071AFC7AB6008AB241 /* LoginController.m in Sources */,
 				BADCB6FF1AEEAAF200F92A21 /* AppDelegate.m in Sources */,
 				BADCB6FC1AEEAAF200F92A21 /* main.m in Sources */,
+				BA70D1CC1B0647540095E010 /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
