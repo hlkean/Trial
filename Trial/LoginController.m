@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionUpdatedNotification:) name:@"sessionUpdated" object:nil];
+    
     self.statusLabel.text = @"";
     self.firstLoad = YES;
 }
@@ -38,18 +39,18 @@
         SPTAuth *auth = [SPTAuth defaultInstance];
         if (auth.session && [auth.session isValid]) {
             
-//            [self performSegueWithIdentifier:@"ShowSplash" sender:nil];
-            [self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
+            [self performSegueWithIdentifier:@"ShowInfo" sender:nil];
+//            [self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
         }
     }
 }
 
--(void)showPlayer {
-//-(void)showSplash {
+//-(void)showPlayer {
+-(void)showInfo {
     self.firstLoad = NO;
     self.statusLabel.text = @"Logged in.";
-//    [self performSegueWithIdentifier:@"ShowSplash" sender:nil];
-    [self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
+    [self performSegueWithIdentifier:@"ShowInfo" sender:nil];
+//    [self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
 }
 
 - (void)authenticationViewController:(SPTAuthViewController *)viewcontroller didFailToLogin:(NSError *)error {
@@ -59,8 +60,8 @@
 
 - (void)authenticationViewController:(SPTAuthViewController *)viewcontroller didLoginWithSession:(SPTSession *)session {
     self.statusLabel.text = @"";
-    [self showPlayer];
-//    [self showSplash];
+//    [self showPlayer];
+    [self showInfo];
 }
 
 - (void)authenticationViewControllerDidCancelLogin:(SPTAuthViewController *)authenticationViewController {
@@ -82,7 +83,7 @@
 }
 
 
-- (void)renewTokenAndShowPlayer {
+- (void)renewTokenAndShowInfo {
     self.statusLabel.text = @"Refreshing token...";
     SPTAuth *auth = [SPTAuth defaultInstance];
     
@@ -94,8 +95,8 @@
             NSLog(@"*** Error renewing session: %@", error);
             return;
         }
-        [self showPlayer];
-//        [self showSplash];
+//        [self showPlayer];
+        [self showInfo];
     }];
 }
 
@@ -111,39 +112,39 @@
     // Check if it's still valid
     if ([auth.session isValid] && self.firstLoad) {
         // It's still valid, show the player.
-        [self showPlayer];
-//        [self showSplash];
+//        [self showPlayer];
+        [self showInfo];
         return;
     }
     
     // Oh noes, the token has expired, if we have a token refresh service set up, we'll call tat one.
     self.statusLabel.text = @"Token expired.";
     if (auth.hasTokenRefreshService) {
-        [self renewTokenAndShowPlayer];
+        [self renewTokenAndShowInfo];
         return;
     }
     
     // Else, just show login dialog
 }
 
-- (void)openInfo {
-    
-    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController * InfoViewController = [storybord   instantiateViewControllerWithIdentifier:@"infoPage"] ;
-    [self presentViewController:InfoViewController animated:YES completion:nil];
-    self.infoWindow.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    self.infoWindow.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    
-    self.modalPresentationStyle = UIModalPresentationCurrentContext;
-    self.definesPresentationContext = YES;
-    
-//    [self presentViewController:self.infoWindow animated:NO completion:nil];
+//- (void)openInfo {
+//    
+//    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController * InfoViewController = [storybord   instantiateViewControllerWithIdentifier:@"infoPage"] ;
+//    [self presentViewController:InfoViewController animated:YES completion:nil];
+//    self.infoWindow.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//    self.infoWindow.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//    
+//    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    self.definesPresentationContext = YES;
+//    
+////    [self presentViewController:self.infoWindow animated:NO completion:nil];
+//
+//}
 
-}
-
-- (IBAction)infoClicked:(id)sender {
-    [self openInfo];
-}
+//- (IBAction)infoClicked:(id)sender {
+//    [self openInfo];
+//}
 
 
 

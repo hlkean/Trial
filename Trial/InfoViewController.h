@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginController.h"
-@interface InfoViewController : UIViewController
+#import <Spotify/Spotify.h>
+@interface InfoViewController : UIViewController<SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *backToLogin;
 
 @end

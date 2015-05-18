@@ -24,7 +24,7 @@
     // Set up shared authentication information
     SPTAuth *auth = [SPTAuth defaultInstance];
     auth.clientID = @kClientId;
-    auth.requestedScopes = @[SPTAuthStreamingScope];
+    auth.requestedScopes = @[SPTAuthStreamingScope, SPTAuthPlaylistReadPrivateScope];
     auth.redirectURL = [NSURL URLWithString:@kCallbackURL];
 #ifdef kTokenSwapServiceURL
     auth.tokenSwapURL = [NSURL URLWithString:@kTokenSwapServiceURL];

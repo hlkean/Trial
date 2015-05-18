@@ -8,7 +8,7 @@
 #import "Config.h"
 #import "ViewController.h"
 #import <Spotify/SPTDiskCache.h>
-
+#import "InfoViewController.h"
 @interface ViewController () <SPTAudioStreamingDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -19,7 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @property (nonatomic, strong) SPTAudioStreamingController *player;
-
+@property (atomic, readwrite) ViewController *toonWindow;
+@property (atomic, readwrite) InfoViewController *infoWindow;
 
 //image slide effect
 @property (nonatomic, strong) NSArray *pageImageNames;
@@ -223,17 +224,38 @@
     [self.player skipNext:nil];
 }
 
-- (IBAction)logoutClicked:(id)sender {
-    SPTAuth *auth = [SPTAuth defaultInstance];
-    if (self.player) {
-        [self.player logout:^(NSError *error) {
-            auth.session = nil;
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+
+
+- (void)closeToons {
+    
+    [self.player stop:nil];
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *toonWindow = [storybord   instantiateViewControllerWithIdentifier:@"infoPage"] ;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    self.toonWindow.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    self.toonWindow.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+    self.definesPresentationContext = YES;
+    
+                
 }
+
+
+- (IBAction)closeClicked:(id)sender {
+    [self closeToons];
+}
+
+//- (IBAction)logoutClicked:(id)sender {
+//    SPTAuth *auth = [SPTAuth defaultInstance];
+//    if (self.player) {
+//        [self.player logout:^(NSError *error) {
+//            auth.session = nil;
+//            [self.navigationController popViewControllerAnimated:YES];
+//        }];
+//    } else {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
+//}
 
 #pragma mark - Logic
 

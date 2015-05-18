@@ -65,8 +65,7 @@
                     <navigationItem key="navigationItem" id="fjN-mZ-aL7" userLabel="Title"/>
                     <connections>
                         <outlet property="infoButton" destination="B4W-Hc-3UB" id="dIP-hq-n0Y"/>
-                        <segue destination="ABQ-00-g8n" kind="show" identifier="ShowPlayer" id="jTf-BC-bT4"/>
-                        <segue destination="5Yc-fx-ObU" kind="presentation" id="rtC-xC-3xA"/>
+                        <segue destination="5Yc-fx-ObU" kind="show" identifier="ShowInfo" id="rtC-xC-3xA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,20 +85,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwl-HZ-ioK">
-                                <rect key="frame" x="285" y="344" width="198" height="195"/>
+                                <rect key="frame" x="285" y="669" width="198" height="195"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeClicked:" destination="5Yc-fx-ObU" eventType="touchUpInside" id="Qzz-4O-Yr9"/>
+                                    <action selector="infoClicked:" destination="5Yc-fx-ObU" eventType="touchUpInside" id="S82-NQ-wSm"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lkJ-x0-nwe">
+                                <rect key="frame" x="0.0" y="270" width="768" height="162"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="backToLogin" destination="cwl-HZ-ioK" id="EUV-cE-8RT"/>
+                        <segue destination="ABQ-00-g8n" kind="presentation" identifier="ShowPlayer" id="e9n-At-PLt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2V-vX-Gia" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,7 +111,7 @@
         <!--View Controller-->
         <scene sceneID="93E-LP-egk">
             <objects>
-                <viewController id="ABQ-00-g8n" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playerPage" id="ABQ-00-g8n" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lFr-L3-H7r"/>
                         <viewControllerLayoutGuide type="bottom" id="JDu-kY-70g"/>
@@ -165,7 +167,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="logoutClicked:" destination="ABQ-00-g8n" eventType="touchUpInside" id="8lv-TD-nn1"/>
+                                            <action selector="closeClicked:" destination="ABQ-00-g8n" eventType="touchUpInside" id="77e-8V-tnL"/>
                                         </connections>
                                     </button>
                                 </subviews>
