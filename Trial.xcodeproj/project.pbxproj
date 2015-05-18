@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BA70D1C91B063FDB0095E010 /* NPInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA70D1C81B063FDB0095E010 /* NPInfiniteScrollView.m */; };
-		BA70D1CC1B0647540095E010 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA70D1CB1B0647540095E010 /* SplashViewController.m */; };
 		BAD74A021AFC096C008AB241 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A011AFC096C008AB241 /* Spotify.framework */; };
 		BAD74A041AFC2C92008AB241 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD74A031AFC2C92008AB241 /* AVFoundation.framework */; };
 		BAD74A071AFC7AB6008AB241 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD74A061AFC7AB6008AB241 /* LoginController.m */; };
@@ -37,6 +36,8 @@
 		BADCB7071AEEAAF200F92A21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADCB7061AEEAAF200F92A21 /* Images.xcassets */; };
 		BADCB70A1AEEAAF200F92A21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADCB7081AEEAAF200F92A21 /* LaunchScreen.xib */; };
 		BADCB7161AEEAAF200F92A21 /* TrialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCB7151AEEAAF200F92A21 /* TrialTests.m */; };
+		BADE92951B0A2A4C00A87BD0 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE92941B0A2A4C00A87BD0 /* InfoViewController.m */; };
+		BADE92971B0A2CAE00A87BD0 /* Remind3D.png in Resources */ = {isa = PBXBuildFile; fileRef = BADE92961B0A2CAE00A87BD0 /* Remind3D.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +53,6 @@
 /* Begin PBXFileReference section */
 		BA70D1C71B063FDB0095E010 /* NPInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPInfiniteScrollView.h; sourceTree = "<group>"; };
 		BA70D1C81B063FDB0095E010 /* NPInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPInfiniteScrollView.m; sourceTree = "<group>"; };
-		BA70D1CA1B0647540095E010 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
-		BA70D1CB1B0647540095E010 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		BAD74A011AFC096C008AB241 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		BAD74A031AFC2C92008AB241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BAD74A051AFC6D82008AB241 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -91,6 +90,9 @@
 		BADCB70F1AEEAAF200F92A21 /* TrialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADCB7141AEEAAF200F92A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADCB7151AEEAAF200F92A21 /* TrialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrialTests.m; sourceTree = "<group>"; };
+		BADE92931B0A2A4C00A87BD0 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		BADE92941B0A2A4C00A87BD0 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		BADE92961B0A2CAE00A87BD0 /* Remind3D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Remind3D.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		BAD74A171AFC9DDC008AB241 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				BADE92961B0A2CAE00A87BD0 /* Remind3D.png */,
 				BAD74A181AFC9DDC008AB241 /* Back.png */,
 				BAD74A191AFC9DDC008AB241 /* Forward.png */,
 				BAD74A1A1AFC9DDC008AB241 /* Pause.png */,
@@ -190,8 +193,8 @@
 				BADCB6FD1AEEAAF200F92A21 /* AppDelegate.h */,
 				BADCB6FE1AEEAAF200F92A21 /* AppDelegate.m */,
 				BADCB7031AEEAAF200F92A21 /* Main.storyboard */,
-				BA70D1CA1B0647540095E010 /* SplashViewController.h */,
-				BA70D1CB1B0647540095E010 /* SplashViewController.m */,
+				BADE92931B0A2A4C00A87BD0 /* InfoViewController.h */,
+				BADE92941B0A2A4C00A87BD0 /* InfoViewController.m */,
 				BADCB7001AEEAAF200F92A21 /* ViewController.h */,
 				BADCB7011AEEAAF200F92A21 /* ViewController.m */,
 				BA70D1C61B063FDB0095E010 /* class */,
@@ -333,6 +336,7 @@
 				BADCB7051AEEAAF200F92A21 /* Main.storyboard in Resources */,
 				BAD74A2C1AFC9DDC008AB241 /* Lobster.jpg in Resources */,
 				BAD74A2A1AFC9DDC008AB241 /* Fam.jpg in Resources */,
+				BADE92971B0A2CAE00A87BD0 /* Remind3D.png in Resources */,
 				BADCB70A1AEEAAF200F92A21 /* LaunchScreen.xib in Resources */,
 				BAD74A281AFC9DDC008AB241 /* Play.png in Resources */,
 				BAD74A2D1AFC9DDC008AB241 /* Masks.jpg in Resources */,
@@ -363,9 +367,9 @@
 				BA70D1C91B063FDB0095E010 /* NPInfiniteScrollView.m in Sources */,
 				BADCB7021AEEAAF200F92A21 /* ViewController.m in Sources */,
 				BAD74A071AFC7AB6008AB241 /* LoginController.m in Sources */,
+				BADE92951B0A2A4C00A87BD0 /* InfoViewController.m in Sources */,
 				BADCB6FF1AEEAAF200F92A21 /* AppDelegate.m in Sources */,
 				BADCB6FC1AEEAAF200F92A21 /* main.m in Sources */,
-				BA70D1CC1B0647540095E010 /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

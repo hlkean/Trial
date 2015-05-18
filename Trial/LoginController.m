@@ -10,12 +10,13 @@
 #import "LoginController.h"
 #import <Spotify/Spotify.h>
 #import "Config.h"
+#import "InfoViewController.h"
 
 @interface LoginController () <SPTAuthViewDelegate>
 
 @property (atomic, readwrite) SPTAuthViewController *authViewController;
 @property (atomic, readwrite) BOOL firstLoad;
-
+@property (atomic, readwrite) InfoViewController *infoWindow;
 @end
 
 @implementation LoginController
@@ -36,18 +37,19 @@
     if(self.navigationController.topViewController == self) {
         SPTAuth *auth = [SPTAuth defaultInstance];
         if (auth.session && [auth.session isValid]) {
-            [self performSegueWithIdentifier:@"ShowSplash" sender:nil];
-            //[self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
+            
+//            [self performSegueWithIdentifier:@"ShowSplash" sender:nil];
+            [self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
         }
     }
 }
 
-//-(void)showPlayer {
--(void)showSplash {
+-(void)showPlayer {
+//-(void)showSplash {
     self.firstLoad = NO;
     self.statusLabel.text = @"Logged in.";
-    [self performSegueWithIdentifier:@"ShowSplash" sender:nil];
-    //[self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
+//    [self performSegueWithIdentifier:@"ShowSplash" sender:nil];
+    [self performSegueWithIdentifier:@"ShowPlayer" sender:nil];
 }
 
 - (void)authenticationViewController:(SPTAuthViewController *)viewcontroller didFailToLogin:(NSError *)error {
@@ -57,8 +59,8 @@
 
 - (void)authenticationViewController:(SPTAuthViewController *)viewcontroller didLoginWithSession:(SPTSession *)session {
     self.statusLabel.text = @"";
-    //[self showPlayer];
-    [self showSplash];
+    [self showPlayer];
+//    [self showSplash];
 }
 
 - (void)authenticationViewControllerDidCancelLogin:(SPTAuthViewController *)authenticationViewController {
@@ -92,8 +94,8 @@
             NSLog(@"*** Error renewing session: %@", error);
             return;
         }
-        //[self showPlayer];
-        [self showSplash];
+        [self showPlayer];
+//        [self showSplash];
     }];
 }
 
@@ -109,8 +111,8 @@
     // Check if it's still valid
     if ([auth.session isValid] && self.firstLoad) {
         // It's still valid, show the player.
-        //[self showPlayer];
-        [self showSplash];
+        [self showPlayer];
+//        [self showSplash];
         return;
     }
     
@@ -124,6 +126,27 @@
     // Else, just show login dialog
 }
 
+- (void)openInfo {
+    
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController * InfoViewController = [storybord   instantiateViewControllerWithIdentifier:@"infoPage"] ;
+    [self presentViewController:InfoViewController animated:YES completion:nil];
+    self.infoWindow.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    self.infoWindow.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+    self.definesPresentationContext = YES;
+    
+//    [self presentViewController:self.infoWindow animated:NO completion:nil];
+
+}
+
+- (IBAction)infoClicked:(id)sender {
+    [self openInfo];
+}
+
+
+
 - (IBAction)loginClicked:(id)sender {
     [self openLoginPage];
 }
@@ -133,5 +156,8 @@
     [self.authViewController clearCookies:nil];
     self.statusLabel.text = @"Cookies cleared.";
 }
+
+
+
 
 @end

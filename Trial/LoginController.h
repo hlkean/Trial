@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
+
 
 
 @end

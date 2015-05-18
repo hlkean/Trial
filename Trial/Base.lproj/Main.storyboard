@@ -20,12 +20,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YgX-2p-AaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1055" y="365"/>
+            <point key="canvasLocation" x="-1747" y="365"/>
         </scene>
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Title" customClass="LoginController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInPage" id="BYZ-38-t0r" userLabel="Title" customClass="LoginController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -34,71 +34,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fj-ar-rtO" customClass="SPTConnectButton">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fj-ar-rtO" customClass="SPTConnectButton">
                                 <rect key="frame" x="210" y="761" width="348" height="66"/>
                                 <color key="backgroundColor" red="0.62807674229999999" green="1" blue="0.59483990919999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="loginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3hb-sv-acE"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RE-MIND" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-bF-O17">
-                                <rect key="frame" x="262" y="82" width="242" height="65"/>
-                                <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="53"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Remind3D.png" translatesAutoresizingMaskIntoConstraints="NO" id="MsK-sI-rAi">
+                                <rect key="frame" x="129" y="33" width="511" height="244"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4W-Hc-3UB">
+                                <rect key="frame" x="210" y="627" width="348" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.89337479440000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Info">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="infoClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kn7-5R-RLx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.43990856794473687" green="0.34495785359999998" blue="0.65785388950000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="1Fj-ar-rtO" firstAttribute="centerX" secondItem="U74-bF-O17" secondAttribute="centerX" constant="1" id="F0b-4s-KtW"/>
-                            <constraint firstItem="U74-bF-O17" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="262" id="FR4-io-nuE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Fj-ar-rtO" secondAttribute="bottom" constant="197" id="Su6-MI-Ese"/>
                             <constraint firstItem="1Fj-ar-rtO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="210" id="bnt-Ks-b35"/>
                             <constraint firstItem="1Fj-ar-rtO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="761" id="h3K-DX-Hkv"/>
-                            <constraint firstItem="U74-bF-O17" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="62" id="qVK-cY-7kM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fjN-mZ-aL7" userLabel="Title"/>
                     <connections>
-                        <segue destination="4hd-F9-5ev" kind="presentation" identifier="ShowSplash" id="cDp-jZ-H4o"/>
+                        <outlet property="infoButton" destination="B4W-Hc-3UB" id="dIP-hq-n0Y"/>
+                        <segue destination="ABQ-00-g8n" kind="show" identifier="ShowPlayer" id="jTf-BC-bT4"/>
+                        <segue destination="5Yc-fx-ObU" kind="presentation" id="rtC-xC-3xA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="365"/>
+            <point key="canvasLocation" x="-605" y="371"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="mgf-3z-Mkm">
+        <!--Info View Controller-->
+        <scene sceneID="Z8y-Kx-g1h">
             <objects>
-                <viewController id="4hd-F9-5ev" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="infoPage" id="5Yc-fx-ObU" customClass="InfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="D82-wh-ZPS"/>
-                        <viewControllerLayoutGuide type="bottom" id="UwR-s9-sDW"/>
+                        <viewControllerLayoutGuide type="top" id="DeD-UX-DAB"/>
+                        <viewControllerLayoutGuide type="bottom" id="BXa-S4-Gve"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J8K-kC-A9T">
+                    <view key="view" contentMode="scaleToFill" id="a2w-a9-xNL">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mj1-NI-4d8">
-                                <rect key="frame" x="274" y="422" width="220" height="179"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwl-HZ-ioK">
+                                <rect key="frame" x="285" y="344" width="198" height="195"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Keep On Keepin' On">
+                                <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ABQ-00-g8n" kind="show" id="8VA-BO-ATI"/>
+                                    <action selector="closeClicked:" destination="5Yc-fx-ObU" eventType="touchUpInside" id="Qzz-4O-Yr9"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BdM-fg-yFn">
-                                <rect key="frame" x="0.0" y="214" width="768" height="162"/>
-                            </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.89337479440000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backToLogin" destination="cwl-HZ-ioK" id="EUV-cE-8RT"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qqw-5y-5dE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2V-vX-Gia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753" y="365"/>
+            <point key="canvasLocation" x="497" y="-233"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="93E-LP-egk">
@@ -212,12 +218,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1663" y="365"/>
+            <point key="canvasLocation" x="1651" y="365"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back" width="78" height="90"/>
         <image name="Forward" width="78" height="90"/>
         <image name="Play" width="78" height="90"/>
+        <image name="Remind3D.png" width="739" height="327"/>
     </resources>
 </document>
