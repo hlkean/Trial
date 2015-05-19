@@ -229,8 +229,8 @@
 - (void)closeToons {
     
     [self.player stop:nil];
-        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *toonWindow = [storybord   instantiateViewControllerWithIdentifier:@"infoPage"] ;
+//        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        UIViewController *toonWindow = [storybord   instantiateViewControllerWithIdentifier:@"infoPage"] ;
     [self dismissViewControllerAnimated:YES completion:nil];
     self.toonWindow.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     self.toonWindow.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
@@ -350,6 +350,9 @@
         }
         
         [self updateUI];
+        
+    
+
         
         NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:1239735521:playlist:36T7jEOVKw1bWxNeNhYpM1"]
                                                                              accessToken:auth.session.accessToken
