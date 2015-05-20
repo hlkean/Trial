@@ -351,7 +351,7 @@
         
         [self updateUI];
         
-    
+   
 
         
         NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:1239735521:playlist:36T7jEOVKw1bWxNeNhYpM1"]
