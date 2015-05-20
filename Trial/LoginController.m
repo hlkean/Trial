@@ -100,32 +100,32 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    SPTAuth *auth = [SPTAuth defaultInstance];
-    
-    // Check if we have a token at all
-    if (auth.session == nil) {
-        self.statusLabel.text = @"";
-        return;
-    }
-    
-    // Check if it's still valid
-    if ([auth.session isValid] && self.firstLoad) {
-        // It's still valid, show the player.
-//        [self showPlayer];
-        [self showInfo];
-        return;
-    }
-    
-    // Oh noes, the token has expired, if we have a token refresh service set up, we'll call tat one.
-    self.statusLabel.text = @"Token expired.";
-    if (auth.hasTokenRefreshService) {
-        [self renewTokenAndShowInfo];
-        return;
-    }
-    
-    // Else, just show login dialog
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    SPTAuth *auth = [SPTAuth defaultInstance];
+//    
+//    // Check if we have a token at all
+//    if (auth.session == nil) {
+//        self.statusLabel.text = @"";
+//        return;
+//    }
+//    
+//    // Check if it's still valid
+//    if ([auth.session isValid] && self.firstLoad) {
+//        // It's still valid, show the player.
+////        [self showPlayer];
+//        [self showInfo];
+//        return;
+//    }
+//    
+//    // Oh noes, the token has expired, if we have a token refresh service set up, we'll call tat one.
+//    self.statusLabel.text = @"Token expired.";
+//    if (auth.hasTokenRefreshService) {
+//        [self renewTokenAndShowInfo];
+//        return;
+//    }
+//    
+//    // Else, just show login dialog
+//}
 
 //- (void)openInfo {
 //    
@@ -152,11 +152,11 @@
     [self openLoginPage];
 }
 
-- (IBAction)clearCookiesClicked:(id)sender {
-    self.authViewController = [SPTAuthViewController authenticationViewController];
-    [self.authViewController clearCookies:nil];
-    self.statusLabel.text = @"Cookies cleared.";
-}
+//- (IBAction)clearCookiesClicked:(id)sender {
+//    self.authViewController = [SPTAuthViewController authenticationViewController];
+//    [self.authViewController clearCookies:nil];
+//    self.statusLabel.text = @"Cookies cleared.";
+//}
 
 
 

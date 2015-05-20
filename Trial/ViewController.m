@@ -183,14 +183,13 @@
     
     
     self.pageImageNames = [NSArray arrayWithObjects:
-                           @"Lobster",
-                           @"Beer",
-                           @"Nam",
-                          @"Viking",
-                            @"Tiger",
-                           @"Masks",
-                           @"FieldHockey",
-                          @"Fam",
+                           @"bench",
+                           @"cake",
+                           @"couple",
+                          @"group",
+                            @"lady",
+                           @"street",
+                           @"table",
                        nil];
     
     NSInteger pageCount = self.pageImageNames.count;
@@ -354,7 +353,7 @@
    
 
         
-        NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:1239735521:playlist:36T7jEOVKw1bWxNeNhYpM1"]
+        NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:sgeerlin:playlist:3wbUS051Nkkkw4mX4igMKN"]
                                                                              accessToken:auth.session.accessToken
                                                                                    error:nil];
         
@@ -366,7 +365,9 @@
             
             SPTPlaylistSnapshot *playlistSnapshot = [SPTPlaylistSnapshot playlistSnapshotFromData:data withResponse:response error:nil];
             
+            
             [self.player playURIs:playlistSnapshot.firstTrackPage.items fromIndex:0 callback:nil];
+            [self.player setShuffle:YES];
         }];
     }];
 }
